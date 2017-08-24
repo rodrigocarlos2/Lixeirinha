@@ -1,15 +1,87 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<style>
+
+form { 
+margin: 0 auto; 
+width:250px;
+}
+
+body {
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font-size: 13px;
+}
+
+div {
+  background: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  /* border-radius */
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  /* box-shadow */
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+  box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+}
+
+form div { 
+  border:1px solid #eee;
+  height:60px;
+  padding:10px
+}
+
+input#iiihuu-iiihuu {
+  text-transform:lowercase;
+  color:#f6892e!important;
+  font-weight:bold;
+  border:0;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  width:75%;
+  float:left
+}
+
+input#formSubmit {
+ background:#F6892E;
+ float:right;
+ padding:8px;
+ color:#fff;
+ border:0;
+ width:20%;
+ font-weight:bold 
+}
+
+</style>
+
 <form id="form">
 
         <label for="form__longitude"> Longitude </label>
-        <input type="text" id="form__longitude2" name="Longitude" value="100" readonly="readonly">
+        <input type="text" id="form__longitude2" name="Longitude" value="0" readonly="readonly">
         <br>
         
         <label for="form__latitude" id="form__latitude"> Latitude </label>
-        <input type="text" id="form__latitude2" name="Latitude" value="100" readonly="readonly">
+        <input type="text" id="form__latitude2" name="Latitude" value="0" readonly="readonly">
         <br>
         <br>
 
-        <input type="submit" value="Send">
+        <p align="center">
+        <input type="submit" value="Tem Lixo Aqui!">
+        </p>
         
 </form>
 
@@ -23,7 +95,7 @@
             navigator.geolocation.getCurrentPosition(showPosition);
         } 
         else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
+        x.innerHTML = "Geolocalização não é Suportada.";
         }
     }
     function showPosition(position) {
@@ -49,10 +121,10 @@
 
             submissionsRef.push(data, function(err) {
                 if (err) {
-                    window.alert('Error when submitting data: ' + err.message);
+                    window.alert('Erro na Submissão de Dados: ' + err.message);
                 }
             });
-            window.alert('Submitted answers: \n' + JSON.stringify(data, null, 3));
+            window.alert('Dados Submetidos: \n' + JSON.stringify(data, null, 2));
             $form[0].reset();
         });
 </script>
@@ -70,3 +142,7 @@
   };
   firebase.initializeApp(config);
 </script>
+
+</body>
+
+</html>
